@@ -18,29 +18,19 @@
                     <a href="#!" class="brand-logo">Accessibility Check List</a>
                     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
-                        <li><a href="about.html">About</a></li>
+                        <li><a href="index.html">home</a></li>
                     </ul>
                     <ul class="side-nav" id="mobile-demo">
-                        <li><a href="about.html">About</a></li>
+                        <li><a href="index.html">home</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
         <div class="container">
             <div class="row">
-                <div class="col s12 m9 l10">
-                    <template v-for="(item, index) in contents">
-                        <div v-bind:id="index" class="section scrollspy">
-                            <h5 style="height:500px"> {{ item.title }} </h5>
-                        </div>
-                    </template>
-                </div>
-                <div class="col hide-on-small-only m3 l2">
-                    <ul class="section table-of-contents pined">
-                        <template v-for="(item, index) in contents">
-                            <li><a v-bind:href="'#' + index"> {{ item.title }}</a></li>
-                        </template>
-                    </ul>
+                <div class="col s12">
+                    <h4>What is this Accessibility Check List ?</h4>
+                    <h4>How To Use</h4>
                 </div>
             </div>
         </div>
@@ -48,7 +38,6 @@
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
-    <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <script type="text/javascript" src="index.js"></script>
 </body>
 
