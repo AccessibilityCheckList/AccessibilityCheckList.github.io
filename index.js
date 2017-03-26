@@ -1,9 +1,9 @@
 $(document).ready(function () {
   $('.scrollspy').scrollSpy();
+  $(".button-collapse").sideNav();
   $('ul.pined li:first-child ul').css('display', 'block');
 });
 
-$(".button-collapse").sideNav();
 
 
 $(window).scroll(function(){
@@ -123,13 +123,13 @@ const vueapp = new Vue({
           },
           {
             head: 'カテゴリー名はわかりやすいか？',
-            body: '社内用語や曖昧な表現でユーザーが理解しづらいカテゴリー名になっていないか。',
+            body: '社内用語や曖昧な表現でユーザーが理解しづらいカテゴリー名になっていないか考える必要がある。',
             isOpen: false,
             isChecked: false,
           },
           {
             head: '提供するコンテンツと構成があっているか？',
-            body: 'TwitterのタイムラインやPinterestのイメージレイアウトなど目的に沿った構成にすべき。',
+            body: 'TwitterのタイムラインやPinterestのレイアウトなど目的に沿った構成にする必要がある。',
             isOpen: false,
             isChecked: false,
           },
@@ -139,14 +139,49 @@ const vueapp = new Vue({
             isOpen: false,
             isChecked: false,
           },
+          {
+            head: 'ナビゲーションに一貫性があるか？',
+            body: 'ナビゲーションの位置、スタイル、ラベルなど一貫性のあるデザインする必要がある。',
+            isOpen: false,
+            isChecked: false,
+          },
+          {
+            head: '現在地はわかるか？',
+            body: 'ナビゲーションの中で、今自分がどの位置にいるかわかる必要がある',
+            isOpen: false,
+            isChecked: false,
+          },
+          {
+            head: '手前や最初に戻る手段を提供しているか？行き止まりのページを作っていないか？',
+            body: `ユーザーが迷った場合にトップページやカテゴリを手がかりに移動するが、
+            トップページや最初のページへのリンクが見つからない場合に目的を達成できないことがある。
+            また読み終わった後に行き先がわからないと、次のアクションを起こせない。
+            検索結果に対してやり直す手段を提供する必要もある。
+            `,
+            isOpen: false,
+            isChecked: false,
+          },
+          {
+            head: 'サイトマップやサイト内検索など情報到達への手段を複数準備しているか？',
+            body: `
+            ユーザーのニーズやリテラシーは様々で、メインのナビゲーションだけでは
+            必要な情報に到達できない可能性がある。サイトマップ、サイト内検索など
+            情報到達への手段を複数準備する必要がある。
+            `,
+            isOpen: false,
+            isChecked: false,
+          },
         ]
       },
       {
         title: 'インタラクション設計',
         items: [
           {
-            head: '',
-            body: '',
+            head: 'デバイスに依存したUIになっていないか？',
+            body: `
+            マウスでの操作（クリック、マウスオーバーなど）しか想定していない、スワイプしか想定していないなど
+            デバイスに依存したUIではユーザーがアクセスできない可能性がある。
+            `,
             isOpen: false,
             isChecked: false,
           },
@@ -197,5 +232,28 @@ const vueapp = new Vue({
         ]
       },
     ]
+  },
+  methods: {
+    openAll: function(){
+      changeState(this.contents, "isOpen", true)
+    },
+    closeAll: function(){
+      changeState(this.contents, "isOpen", false)
+    },
+    checkAll: function(){
+      changeState(this.contents, "isChecked", true)
+    },
+    uncheckAll: function(){
+      changeState(this.contents, "isChecked", false)
+    },
   }
 })
+
+function changeState(ar, target, bool) {
+    ar.map(function(group, index){
+      group.items.map(function(item, index){
+        item[target] = bool;
+      })
+    })
+}
+      
