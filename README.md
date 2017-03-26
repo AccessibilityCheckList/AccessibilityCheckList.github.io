@@ -7,6 +7,7 @@
 
 ### イメージ
 
+![topcap](https://github.com/AccessibilityCheckList/AccessibilityCheckList.github.io/blob/master/cap.png)
 
 ### 概要
 書籍で紹介されている順番に従って
