@@ -9,3 +9,49 @@
 .innerList {
     margin-left: 10px;
 }
+
+.checklist-head {
+    border: 1px solid #9E9E9E;
+    padding: 10px;
+    border-collapse: collapse;
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.checklist-head div:last-child {
+    margin-left: auto;
+}
+
+.checkbox {
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+.checkbox-on {
+    color:#00E676;
+}
+.checkbox-off {
+    cursor: pointer;
+}
+.head-title {
+    margin: 10px;
+}
+.expand {
+    cursor: pointer;
+    margin-top: 2px;  
+    margin-right: 5px;
+}
+.expand i {
+    border: 1px solid #9E9E9E;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.checklist-body {
+    margin-top: -5px;
+    border: 1px solid #9E9E9E;
+    border-top-color: #fff;
+    padding: 25px;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}

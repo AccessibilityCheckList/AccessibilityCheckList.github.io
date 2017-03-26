@@ -33,18 +33,29 @@
                         <div v-bind:id="i" class="section scrollspy">
                             <h5> {{ (i + 1) + ". " + a.title }} </h5>
                             <br>
-                            <ul class="collapsible" data-collapsible="expandable">
+                            <ul>
                                 <template v-for="(b, j) in a.items">
                                     <li>
-                                        <div class="collapsible-header" v-bind:id="i + '_' + j">
-                                            <i class="material-icons">done</i>
-                                            {{ `${i + 1}-${j + 1}.${b.head}` }}
-                                            <!--<span class="right">
-                                                <label><input type="radio" id="a" name="nam" > 対応済 </label>
-                                                <label><input type="radio" id="a" name=nam"" > 対象外 </label>
-                                            </span>-->
+                                        <div class="checklist-head" v-bind:id="i + '_' + j">
+                                            <template v-if="b.isChecked">
+                                                <div class="checkbox checkbox-on" v-on:click="b.isChecked = !b.isChecked"> <i class="material-icons">done</i> </div>
+                                            </template>
+                                            <template v-else>
+                                                <div class="checkbox checkbox-off" v-on:click="b.isChecked = !b.isChecked"> <i class="material-icons">crop_square</i> </div>
+                                            </template>
+                                            <div class="head-title">
+                                                {{ `${i + 1}-${j + 1}.${b.head}` }}
+                                            </div>
+                                            <template v-if="b.isOpen">
+                                                <div class="expand" v-on:click="b.isOpen = !b.isOpen"> <i class="material-icons">expand_less</i></div>
+                                            </template>
+                                            <template v-else>
+                                                <div class="expand" v-on:click="b.isOpen = !b.isOpen"> <i class="material-icons">expand_more</i></div>
+                                            </template>
                                         </div>
-                                        <div class="collapsible-body">{{ b.body }}</div>
+                                        <template v-if="b.isOpen">
+                                            <div class="checklist-body">{{ b.body }}</div>
+                                        </template>
                                     </li>
                                 </template>
                             </ul>
