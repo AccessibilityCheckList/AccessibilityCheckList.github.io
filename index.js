@@ -1,8 +1,27 @@
 $(document).ready(function () {
   $('.scrollspy').scrollSpy();
+  $('ul.pined li:first-child ul').css('display', 'block');
 });
 
- $(".button-collapse").sideNav();
+$(".button-collapse").sideNav();
+
+
+$(window).scroll(function(){
+
+  var $li = $('ul.pined li')
+
+  $li.each(function(index){
+
+    var text = $(this).find('a.active').text();
+
+    if(text === '') {
+      $(this).find('ul').css('display', 'none');
+    } else {
+      $(this).find('ul').css('display', 'block');
+    }
+    
+  })    
+})
 
 const vueapp = new Vue({
   el: '#main',
@@ -89,21 +108,93 @@ const vueapp = new Vue({
       },
       {
         title: 'ナビゲーション設計',
+        items: [
+          {
+            head: '分類や並び順が提供側都合になっていないか？',
+            body: '事業部毎の分類になっていないか、ユーザーが欲しい情報が先頭に並んでいるか？など提供側の都合で決めずにユーザー視点で考える。',
+            isOpen: false,
+            isChecked: false,
+          },
+          {
+            head: '分類を一種類に限定してないか？',
+            body: 'ユーザーは、並び順を「人気順」「日付順」「安い順」など複数の切り口でみたい。並び替えを複数の方法で行えるように提供する。',
+            isOpen: false,
+            isChecked: false,
+          },
+          {
+            head: 'カテゴリー名はわかりやすいか？',
+            body: '社内用語や曖昧な表現でユーザーが理解しづらいカテゴリー名になっていないか。',
+            isOpen: false,
+            isChecked: false,
+          },
+          {
+            head: '提供するコンテンツと構成があっているか？',
+            body: 'TwitterのタイムラインやPinterestのイメージレイアウトなど目的に沿った構成にすべき。',
+            isOpen: false,
+            isChecked: false,
+          },
+          {
+            head: '途中の階層ページはあるか？',
+            body: '検索エンジンからユーザーが来た場合、カテゴリ毎に階層化されたページがなければ、他の類似のコンテンツを確認することができない',
+            isOpen: false,
+            isChecked: false,
+          },
+        ]
       },
       {
         title: 'インタラクション設計',
+        items: [
+          {
+            head: '',
+            body: '',
+            isOpen: false,
+            isChecked: false,
+          },
+        ]
       },
       {
         title: 'システム設計',
+        items: [
+          {
+            head: '',
+            body: '',
+            isOpen: false,
+            isChecked: false,
+          },
+        ]
       },
       {
         title: 'コンテンツ設計',
+        items: [
+          {
+            head: '',
+            body: '',
+            isOpen: false,
+            isChecked: false,
+          },
+        ]
       },
       {
         title: 'ビジュアルデザイン',
+        items: [
+          {
+            head: '',
+            body: '',
+            isOpen: false,
+            isChecked: false,
+          },
+        ]
       },
       {
         title: '実装',
+        items: [
+          {
+            head: '',
+            body: '',
+            isOpen: false,
+            isChecked: false,
+          },
+        ]
       },
     ]
   }

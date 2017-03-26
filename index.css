@@ -9,7 +9,9 @@
 .innerList {
     margin-left: 10px;
 }
-
+.display-none {
+    display: none;
+}
 .checklist-head {
     border: 1px solid #9E9E9E;
     padding: 10px;
@@ -36,6 +38,7 @@
 .head-title {
     margin: 10px;
     font-weight: bold;
+    cursor: pointer;
 }
 .expand {
     cursor: pointer;

@@ -44,7 +44,7 @@
                                             <template v-else>
                                                 <div class="checkbox checkbox-off" v-on:click="b.isChecked = !b.isChecked"> <i class="material-icons">check_box_outline_blank</i> </div>
                                             </template>
-                                            <div class="head-title">
+                                            <div class="head-title" v-on:click="b.isChecked = !b.isChecked">
                                                 {{ `${i + 1}-${j + 1}.${b.head}` }}
                                             </div>
                                             <template v-if="b.isOpen">
@@ -68,7 +68,7 @@
                         <template v-for="(a, i) in contents">
                             <li>
                                 <a v-bind:href="'#' + i"> {{ (i + 1) + ". " + a.title }}</a>
-                                <ul>
+                                <ul class="display-none">
                                     <template v-for="(b, j) in a.items">
                                         <li class="innerList">
                                             <a v-bind:href="'#' + i + '_' + j"> {{ (i + 1) + '-' +(j + 1) + ". " + b.head }}</a>
