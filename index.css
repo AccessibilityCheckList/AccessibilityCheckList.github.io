@@ -62,17 +62,3 @@
     border-collapse: collapse;
     margin-bottom: 10px;
 }
-
-.controller {
-    position: fixed;
-    display: flex;
-
-}
-.controller a {
-    display: inline-block;
-    padding: 5px;
-    border: 1px solid #9E9E9E;
-    color: #9E9E9E;
-    border-radius: 5px;
-    cursor: pointer;
-}

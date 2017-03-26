@@ -185,13 +185,23 @@ const vueapp = new Vue({
             isOpen: false,
             isChecked: false,
           },
+          {
+            head: '不要にスクロールを制御していないか？',
+            body: `
+            スクロールバーが消えたり、OS標準のもので無くなると、ユーザーはスクロールできることに気付きにくい。
+            また地図などでインナースクロールの範囲が広すぎると全体をスクロールできないことがある。
+            無限スクロールはスクリーンリーダーのユーザーはページが伸びていることに気づかないことがある。
+            `,
+            isOpen: false,
+            isChecked: false,
+          },
         ]
       },
       {
         title: 'システム設計',
         items: [
           {
-            head: '',
+            head: 'Under Construction',
             body: '',
             isOpen: false,
             isChecked: false,
@@ -202,7 +212,7 @@ const vueapp = new Vue({
         title: 'コンテンツ設計',
         items: [
           {
-            head: '',
+            head: 'Under Construction',
             body: '',
             isOpen: false,
             isChecked: false,
@@ -213,7 +223,7 @@ const vueapp = new Vue({
         title: 'ビジュアルデザイン',
         items: [
           {
-            head: '',
+            head: 'Under Construction',
             body: '',
             isOpen: false,
             isChecked: false,
@@ -224,7 +234,7 @@ const vueapp = new Vue({
         title: '実装',
         items: [
           {
-            head: '',
+            head: 'Under Construction',
             body: '',
             isOpen: false,
             isChecked: false,
