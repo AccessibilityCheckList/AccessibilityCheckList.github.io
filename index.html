@@ -16,8 +16,8 @@
         <nav class="red accent-2">
             <div class="nav-wrapper">
                 <div class="container">
-                    <a href="#!" class="brand-logo"><i class="material-icons">accessibility</i>Accessibility Check List</a>
-                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <a class="brand-logo"><i class="material-icons">accessibility</i>web アクセシビリティチェックリスト</a>
+                    <a data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="about.html">About</a></li>
                     </ul>
@@ -32,17 +32,17 @@
                 <div class="col s12 m9 l10">
                     <template v-for="(a, i) in contents">
                         <div v-bind:id="i" class="section scrollspy">
-                            <h5> {{ (i + 1) + ". " + a.title }} </h5>
+                            <h5>{{ (i + 1) + ". " + a.title }} </h5>
                             <br>
                             <ul>
                                 <template v-for="(b, j) in a.items">
                                     <li>
                                         <div class="checklist-head" v-bind:id="i + '_' + j">
                                             <template v-if="b.isChecked">
-                                                <div class="checkbox checkbox-on" v-on:click="b.isChecked = !b.isChecked"> <i class="material-icons">done</i> </div>
+                                                <div class="checkbox checkbox-on" v-on:click="b.isChecked = !b.isChecked"> <i class="material-icons">check_box</i> </div>
                                             </template>
                                             <template v-else>
-                                                <div class="checkbox checkbox-off" v-on:click="b.isChecked = !b.isChecked"> <i class="material-icons">crop_square</i> </div>
+                                                <div class="checkbox checkbox-off" v-on:click="b.isChecked = !b.isChecked"> <i class="material-icons">check_box_outline_blank</i> </div>
                                             </template>
                                             <div class="head-title">
                                                 {{ `${i + 1}-${j + 1}.${b.head}` }}
