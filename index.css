@@ -35,6 +35,7 @@
 }
 .head-title {
     margin: 10px;
+    font-weight: bold;
 }
 .expand {
     cursor: pointer;

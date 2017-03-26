@@ -2,6 +2,8 @@ $(document).ready(function () {
   $('.scrollspy').scrollSpy();
 });
 
+ $(".button-collapse").sideNav();
+
 const vueapp = new Vue({
   el: '#main',
   data: {
@@ -26,8 +28,8 @@ const vueapp = new Vue({
             isChecked: false,
           },
           {
-            head: '適切な方針を設定できているか？',
-            body: '方針(WCAGやJIS規格のどこまで準拠するか)、対象(PDFや動画は対象外とするか)、スケジュールなどを明確にする必要がある。スクリーンリーダーの読み上げなど特定環境に特化せず様々な環境でアクセスできるように配慮する。',
+            head: '手段が目的になり目に見えやすい施策だけ取り入れてないか？',
+            body: '文字サイズの変更、読み上げ、動画のテキスト版など取り込み安い施策を取り込むだけでは、本当にアクセシビリティが向上しているとは言えない。アクセシビリティ確保の目的を明確にする必要がある。',
             isOpen: false,
             isChecked: false,
           },
@@ -35,6 +37,14 @@ const vueapp = new Vue({
       },
       {
         title: '要件定義',
+        items: [
+          {
+            head: 'アクセシビリティについての合意形成ができているか？',
+            body: 'プロジェクトメンバー内でアクセシビリティ方針が合意できていないと、適切な対応ができない、または終盤で覆る可能性がある。まずは最低限の方針を決定しメンバーと共有する。',
+            isOpen: false,
+            isChecked: false,
+          },
+        ]
       },
       {
         title: 'ナビゲーション設計',
