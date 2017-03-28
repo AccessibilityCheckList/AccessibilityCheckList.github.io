@@ -223,6 +223,15 @@ const vueapp = new Vue({
             isOpen: false,
             isChecked: false,
           },
+          {
+            head: '音声が勝手に再生されないか？',
+            body: `
+            ユーザーは音が再生されてよい場所で操作しているとは限らないため、
+            自動で音が再生されるような仕様にはしない。音声を再生するかどうかはユーザーにゆだねるようにする。
+            `,
+            isOpen: false,
+            isChecked: false,
+          },
           
         ]
       },
