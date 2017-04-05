@@ -74,7 +74,7 @@
                 <div class="col hide-on-small-only m3 l2">
                     <ul class="section table-of-contents pined">
                         <template v-for="(a, i) in contents">
-                            <li>
+                            <li class="outerList">
                                 <a v-bind:href="'#' + i"> {{ (i + 1) + ". " + a.title }}</a>
                                 <ul class="display-none">
                                     <template v-for="(b, j) in a.items">
